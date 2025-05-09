@@ -4,6 +4,14 @@ on:
     types:
       - opened
   workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'dev-*'
+      - 'feature/**'
+    paths-ignore:
+      - 'README.md'
+      - '.github/workflows/*'
 jobs:
   deploy:
     runs-on: ubuntu-latest
